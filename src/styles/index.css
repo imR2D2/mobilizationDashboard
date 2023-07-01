@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*La etiqueta NavLink usa la clase activate, entonces le damos valor para que se mantenga en el NAVBAR */
+.active{
+    @apply border-gray-900
+}
+/*Barra de navegacion-----------------------------------*/
+::-webkit-scrollbar{
+    width: 10px;
+    z-index: -1;
+}
+/*Carril*/
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
+/*Barra*/
+::-webkit-scrollbar-thumb{
+    background-color: #d8d8d8;
+
+    border-radius: 10px;
+    opacity: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #c9c9c9;
+    opacity: 10px;
+}
+
+/*NavBar config*/
+.navBar{
+    @apply mx-3 text-gray-900 dark:text-white text-sm font-medium leading-4 inline-flex border-b-2 border-white dark:border-black hover:border-gray-900 dark:hover:border-white pb-1
+}
+
+/*Footer config*/
+.footerTitle{
+    @apply font-medium text-gray-900 hover:font-bold dark:text-gray-300 dark:hover:text-white
+}
+
+.footerDescription{
+    @apply font-medium text-gray-400 hover:text-gray-700 dark:hover:text-gray-300
+}
