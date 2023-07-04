@@ -49,7 +49,7 @@ const HeroSection = () => {
         </div>
       )}
     </div>
-  );
+  );  
 };
 
 // Ejemplo de componente para mostrar en función de la opción seleccionada

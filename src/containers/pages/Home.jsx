@@ -1,28 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import Dropdown from "../../components/navigation/Dropdown";
 
 import Navbar from "../../components/navigation/Navbar";
 import Layout from "../../hocs/layouts/Layout";
-
-
+import Table from '../../components/navigation/Table';
+import Modal from "../../components/navigation/Modal"
 
 const Home = () => {
   return (
     <Layout>
       <Helmet>
         <title>Dashboard | Inicio</title>
-        <meta name='description' content='Buy and sell tickets with solidity' />
-        <meta name='keywords' content='blocksidian, blockchain' />
-        <meta name='robots' content='all' />
-        <meta name='author' content='Blocksidian' />
-        <meta name='publisher' content='Blocksidian' />
+        {/*Metatags*/}
       </Helmet>
 
       <div>
         <Navbar />
         <Dropdown />
+        <Table />
+        <Modal />
       </div>
     </Layout>
   );

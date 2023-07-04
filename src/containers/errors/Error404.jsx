@@ -2,27 +2,18 @@ import { Link } from "react-router-dom"
 
 const Error = () =>{
     return (
-        <div class="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16">
-            <div class="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">
-                <div class="relative">
-                    <div class="absolute">
-                        <div class="">
-                            <h1 class="my-2 text-gray-800 font-bold text-2xl">
-                                Parece que buscabas una pagina
-                            </h1>
-                            <p class="my-2 text-gray-800">¡Lo siento por eso! Visite nuestra página de inicio para llegar a donde necesita ir.</p>
-                            <button class="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">
-                                <Link to="/" >¡REGRESAR!</Link>
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
-                    </div>
+
+        <div class="flex items-center justify-center py-12">
+            <div class="bg-white dark:bg-gray-800 border dark:border-gray-900 rounded-md flex items-center justify-center mx-4 md:w-2/3">
+                <div class="flex flex-col items-center py-16">
+                    <img class="px-4 hidden md:block" src="https://i.ibb.co/9Vs73RF/undraw-page-not-found-su7k-1-3.png" />
+                    <img class="md:hidden" src="https://i.ibb.co/RgYQvV7/undraw-page-not-found-su7k-1.png" />
+                    <h1 class="px-4 pt-8 pb-4 text-center dark:text-white text-5xl font-bold leading-10 text-gray-800">OOPS!</h1>
+                    <p class="px-4 pb-10 text-base leading-none dark:text-gray-200 text-center text-gray-600">No signal here! we cannot find the page you are looking for</p>
+                    <button class="mx-4 h-10 w-44  rounded-md text-white text-base bg-indigo-700 hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-indigo-800">
+                        <Link to="/">Go Back</Link>
+                    </button>
                 </div>
-            </div>
-            <div>
-                <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
             </div>
         </div>
     )
