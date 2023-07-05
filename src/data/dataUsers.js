@@ -2,12 +2,12 @@ const users = [
     {
         id: 0,
         nombre: "Arturo",
-        apellidoPa: "Hernandez",
-        apellidoMa: "Bueno",
+        apellidoPaterno: "Hernandez",
+        apellidoMaterno: "Bueno",
         sexo: "Masculino",
         responsabilidad: "Jefe Area",
-        claveElector: "1",
-        voluntario: false,
+        celular: "6182287120",
+        seccion: "12345",
         nacimiento: {
             fecha: "2002-06-30",
             estado: "Durango",
@@ -16,17 +16,31 @@ const users = [
     {
         id: 1,
         nombre: "Ricardo",
-        apellidoPa: "Hernandez",
-        apellidoMa: "Bueno",
+        apellidoPaterno: "Hernandez",
+        apellidoMaterno: "Bueno",
         sexo: "Masculino",
         responsabilidad: "Asistente",
-        claveElector: "2",
-        voluntario: true,
+        celular: "6181669010",
+        seccion: "67890",
         nacimiento: {
             fecha: "2005-06-05",
             estado: "Chihuahua",
         }
-    }
+    },
+    {
+        id: 3,
+        nombre: "Jose",
+        apellidoPaterno: "Hernandez",
+        apellidoMaterno: "Bueno",
+        sexo: "Masculino",
+        responsabilidad: "Jefe Area",
+        celular: "6182287120",
+        seccion: "12346",
+        nacimiento: {
+            fecha: "2002-06-30",
+            estado: "Durango",
+        }
+    },
 ];
 
 export default users

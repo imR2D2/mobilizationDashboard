@@ -16,6 +16,7 @@ const HeroSection = () => {
     setShowComponent(true);
   };
 
+  
   return (
     <div className="mt-20 relative">
       <form onSubmit={handleSubmit} className="max-w-xs mx-auto">

@@ -17,6 +17,7 @@ const GraphicsF = () => {
       const { data } = Papa.parse(csv, { header: true });
 
       setData(data.slice(1)); // Excluir la primera fila que contiene los encabezados
+      console.log(data)
     };
 
     fetchData();

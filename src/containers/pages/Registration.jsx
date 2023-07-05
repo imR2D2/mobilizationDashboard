@@ -1,18 +1,18 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import Navbar from "../../components/navigation/Navbar"
+import Navbar from "../../components/home/Navbar"
 import Layout from "../../hocs/layouts/Layout"
-import Filter from "../../components/navigation/SearchUser"
+import MyModal from "../../components/home/MyModal"
 
 const Contacto = () =>{
     return (
         <Layout>
             <Helmet>
                 <title>Dashboard | Registro</title>
-                 {/*Metatags*/}
+                {/*Metatags*/}
             </Helmet>
-            <Filter />
+            <MyModal />
             <Navbar />
 
         </Layout>

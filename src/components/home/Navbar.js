@@ -34,16 +34,16 @@ const Navbar = () => {
 	return (
 		<div
 			id="navbar"
-			className="fixed bg-white dark:bg-black w-full top-0 z-3	0 px-4 py-3"
+			className="fixed bg-white dark:bg-black w-full top-0 z-30 px-4 py-3"
 		>
 			<div className="ml-6 -mt-2 flex flex-wrap items-center sm:flex-nowrap">
 
 				<div id="menu" className="hidden md-1:block ml-4 mt-2 flex-shrink-0">
 
-					<NavLink to="/" className="text-sm border-2 rounded-full px-6 py-1.5 ml-3 font-medium text-purplee-400 border-purplee-400 hover:bg-purplee-800 hover:border-purplee-800 hover:text-whitee-900 dark:hover:text-black dark:text-whitee-900 transition duration-700">
+					<NavLink to="/" className="text-sm border-2 rounded-full px-6 py-1.5 ml-3 font-medium text-blue-900 border-blue-900 hover:bg-blue-950 hover:border-blue-950 hover:text-whitee-900 dark:hover:text-black dark:text-whitee-900 transition duration-700">
 						Inicio
 					</NavLink>
-					<NavLink to="/registro" className="text-sm border-2 rounded-full px-6 py-1.5 ml-3 font-medium text-purplee-400 border-purplee-400 hover:bg-purplee-800 hover:border-purplee-800 hover:text-whitee-900 dark:hover:text-black dark:text-whitee-900 transition duration-700">
+					<NavLink to="/registro" className="text-sm border-2 rounded-full px-6 py-1.5 ml-3 font-medium text-blue-900 border-blue-900 hover:bg-blue-950 hover:border-blue-950 hover:text-whitee-900 dark:hover:text-black dark:text-whitee-900 transition duration-700">
 						Registro
 					</NavLink>
 				</div>

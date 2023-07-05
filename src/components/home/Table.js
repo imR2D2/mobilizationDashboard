@@ -40,7 +40,7 @@ const Table = () => {
   };
 
   return (
-    <div className=''>
+    <div className='mb-20'>
       <button className='mt-30 w-36 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'>
         EXPORTAR
       </button>

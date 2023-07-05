@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom'
+import { BrowserRouter as Router} from 'react-router-dom'
 import { Helmet, HelmetProvider} from 'react-helmet-async';
 import { Provider } from 'react-redux'
 import store from './store'
 import Routess from './Routes';
+import Navbar from './components/home/Navbar';
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       </Helmet>
 
       <Provider store={store}>
+          
           <Router>
+            <Navbar />
             <Routess />
           </Router>
         </Provider>

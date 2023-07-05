@@ -4,7 +4,7 @@
 
 /*La etiqueta NavLink usa la clase activate, entonces le damos valor para que se mantenga en el NAVBAR */
 .active{
-    @apply border-gray-900
+    @apply bg-blue-900 text-whitee-900
 }
 /*Barra de navegacion-----------------------------------*/
 ::-webkit-scrollbar{

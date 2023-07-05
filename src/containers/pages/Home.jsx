@@ -1,12 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import Dropdown from "../../components/navigation/Dropdown";
+import Dropdown from "../../components/home/Dropdown";
 
-import Navbar from "../../components/navigation/Navbar";
+import Navbar from "../../components/home/Navbar";
 import Layout from "../../hocs/layouts/Layout";
-import Table from '../../components/navigation/Table';
-import Modal from "../../components/navigation/Modal"
+import Table from '../../components/home/Table';
 
 const Home = () => {
   return (
@@ -20,7 +19,6 @@ const Home = () => {
         <Navbar />
         <Dropdown />
         <Table />
-        <Modal />
       </div>
     </Layout>
   );
