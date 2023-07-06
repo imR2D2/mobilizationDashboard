@@ -4,8 +4,7 @@ import { useState, Fragment } from "react";
 import { NavLink} from "react-router-dom";
 import { Popover, Transition } from "@headlessui/react";
 
-import DarkModeSwitch from "../items/DarkMode";	
-
+import DarkModeSwitch from "../darkMode/DarkMode";	
 
 const Navbar = () => {
 	//Activar Scroll

@@ -1,17 +1,17 @@
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
 
-import SearchUser from '../registration/SearchUser'
+import SearchUser from "../registration/SearchUser";
 
 export default function MyModal() {
-  let [isOpen, setIsOpen] = useState(false)
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
   function openModal() {
-    setIsOpen(true)
+    setIsOpen(true);
   }
 
   return (
@@ -32,7 +32,6 @@ export default function MyModal() {
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -56,12 +55,10 @@ export default function MyModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-[90vw] h-[70vh] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  
-                  <div className="mt-2">
+                <Dialog.Panel className="w-[100vw] h-[70vh] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <div className="mt-2 h-full overflow-y-auto">
                     <SearchUser />
                   </div>
-
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -69,5 +66,5 @@ export default function MyModal() {
         </Dialog>
       </Transition>
     </>
-  )
+  );
 }

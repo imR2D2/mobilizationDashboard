@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import Papa from 'papaparse';
-import jijija from "./rptMovili.csv";
+import graphics from "../../assets/xlsx/rptMovili.csv";
 
 const GraphicsF = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(jijija);
+      const response = await fetch(graphics);
       const reader = response.body.getReader();
       const result = await reader.read();
       const decoder = new TextDecoder('utf-8');

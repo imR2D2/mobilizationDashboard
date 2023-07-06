@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import GraphicsF from './GraphicsF';
-import GraphicsL from './GraphicsL';
+import GraphicsF from '../graphics/GraphicsF';
+import GraphicsL from '../graphics/GraphicsL';
 
 const HeroSection = () => {
   const [selectedOption, setSelectedOption] = useState('estatal');
