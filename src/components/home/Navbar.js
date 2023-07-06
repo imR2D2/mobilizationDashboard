@@ -33,7 +33,7 @@ const Navbar = () => {
 	return (
 		<div
 			id="navbar"
-			className="fixed bg-white dark:bg-black w-full top-0 z-30 px-4 py-3"
+			className="flex justify-center fixed bg-white dark:bg-black w-full top-0 z-30 px-4 py-3"
 		>
 			<div className="ml-6 -mt-2 flex flex-wrap items-center sm:flex-nowrap">
 
