@@ -5,7 +5,7 @@ import graphics from "../../assets/xlsx/rptMovili.csv";
 const Table = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [perPage] = useState(5);
+  const [perPage, setPerPage] = useState(5);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +22,11 @@ const Table = () => {
     fetchData();
   }, []);
 
-  console.log(data)
-  
+  const handlePerPageChange = (e) => {
+    setPerPage(parseInt(e.target.value));
+    setCurrentPage(1); // Resetear la página actual al cambiar el número de filas por página
+  };
+
   const indexOfLastRecord = currentPage * perPage;
   const indexOfFirstRecord = indexOfLastRecord - perPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -41,14 +44,13 @@ const Table = () => {
     }
   };
 
-
   return (
-    <div className='mb-20'>
-      <button className='mt-30 w-36 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'>
+    <div className='my-20'>
+      <button className='ml-10 mt-30 w-36 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'>
         EXPORTAR
       </button>
       <div className='overflow-auto rounded-lg shadow'>
-        <table className="text-sm w-[60vw] border-collapse">
+      <table className="text-sm w-[60vw] border-collapse">
           <thead>
             <tr>
               <th className="px-2 py-2 border">DF</th>
@@ -91,6 +93,7 @@ const Table = () => {
           </tbody>
         </table>
       </div>
+
       <div className='flex justify-between mx-10'>
         <button
           className='mt-50 block w-72 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'
@@ -98,6 +101,23 @@ const Table = () => {
         >
           ANTERIOR
         </button>
+
+        <p className='mt-4'>
+          {currentPage} de {Math.ceil(data.length / perPage)}
+        </p>
+        <select
+          value={perPage}
+          onChange={handlePerPageChange}
+          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+        >
+          <option value={5}>5 rows</option>
+          <option value={10}>10 rows</option>
+          <option value={15}>15 rows</option>
+        </select>
+        
+        <h2></h2>
+
+
         <button
           className='mt-50 block w-72 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'
           onClick={handleNextPage}

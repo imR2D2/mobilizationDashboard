@@ -39,7 +39,7 @@ const HeroSection = () => {
         <input
           type="submit"
           value="Mostrar"
-          className="block w-full px-4 py-2 mt-4 text-white bg-blue-500 rounded-md hover:bg-blue-700"
+          className="block w-full px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-700"
         />
       </form>
       {(showComponent || selectedOption === 'estatal') && (
