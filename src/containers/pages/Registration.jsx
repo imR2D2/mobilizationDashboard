@@ -1,10 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import Navbar from "../../components/home/Navbar"
 import Layout from "../../Layout"
-import MyModal from "../../components/home/MyModal"
-import AllInputs from '../../components/forms/AllInputs';
+import MyModal from "../../components/registration/MyModal"
+import StructureInputs from '../../components/inputs/ShowInputs';
 
 const Contacto = () =>{
     return (
@@ -13,12 +12,10 @@ const Contacto = () =>{
                 <title>Dashboard | Registro</title>
                 {/*Metatags*/}
             </Helmet>
-            
-            <MyModal />
-            
-            <AllInputs />
-            <Navbar />
 
+            <MyModal />
+            <StructureInputs />
+        
         </Layout>
     )
 }

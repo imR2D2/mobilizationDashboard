@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
+
 import graphics from "../../assets/xlsx/rptMovili.csv";
+import { FaFileExcel } from 'react-icons/fa';
 
 const Table = () => {
   const [data, setData] = useState([]);
@@ -34,23 +36,42 @@ const Table = () => {
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
-    }
+    } //Pagina anterior, funcion para retroceder
   };
 
   const handleNextPage = () => {
     const totalPages = Math.ceil(data.length / perPage);
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
-    }
+    } //Pagina siguiente, funcion para avanzar
   };
 
   return (
     <div className='my-20'>
-      <button className='ml-10 mt-30 w-36 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'>
+      <button className='hidden sm:flex ml-10 mt-30 mb-6 w-36 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'>
+        <FaFileExcel className='mr-2' size={24} color="white" />
         EXPORTAR
       </button>
+
+        <div className='flex justify-center space-x-6 my-4 sm:hidden'>
+          <p className='mt-2'>
+            {currentPage} de {Math.ceil(data.length / perPage)}
+          </p>
+
+          <select
+            value={perPage}
+            onChange={handlePerPageChange}
+            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value={5}>5 rows</option>
+            <option value={10}>10 rows</option>
+            <option value={20}>15 rows</option>
+          </select>
+        </div>
+
+      {/*Primera fila de la tabla */}
       <div className='overflow-auto rounded-lg shadow'>
-      <table className="text-sm w-[60vw] border-collapse">
+      <table className="text-sm w-[100vw] border-collapse">
           <thead>
             <tr>
               <th className="px-2 py-2 border">DF</th>
@@ -69,6 +90,8 @@ const Table = () => {
               <th className="px-2 py-2 border">EFECTIVIDAD</th>
             </tr>
           </thead>
+
+          {/*Llenado automatico de las filas desde archivo csv */}
           <tbody className='text-center'>
             {currentRecords.map((row, index) => (
               <tr key={index}>
@@ -93,37 +116,46 @@ const Table = () => {
           </tbody>
         </table>
       </div>
-
-      <div className='flex justify-between mx-10'>
+      
+      {/*Botones de navegacion entre pestanas de informacion */}
+      <div className='space-x-4 flex justify-between mx-10'>
         <button
-          className='mt-50 block w-72 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'
+          className='block w-72 px-4 py-2 mt-6 text-white bg-bluee-200 rounded-md hover:bg-blue-950'
           onClick={handlePreviousPage}
         >
           ANTERIOR
         </button>
 
-        <p className='mt-4'>
-          {currentPage} de {Math.ceil(data.length / perPage)}
-        </p>
-        <select
-          value={perPage}
-          onChange={handlePerPageChange}
-          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-        >
-          <option value={5}>5 rows</option>
-          <option value={10}>10 rows</option>
-          <option value={15}>15 rows</option>
-        </select>
+        <button className='block sm:hidden h-10 mt-6 w-36 px-4 py-2 text-white bg-bluee-200 rounded-md hover:bg-blue-950'>
+          <FaFileExcel size={20} color="white" />
+        </button>
+
+        {/*Campos en parte de abajo de la tabla en pantallas grandes */}
+        <div className='flex-col mt-2 hidden sm:block '>
+          {/*Calculo para sacar el numero de paginas */}
+          <p className='ml-4'>
+            {currentPage} de {Math.ceil(data.length / perPage)}
+          </p>
+
+          {/*Select para mostrar el numero de campos necesario dentro de la pagina */}
+          <select
+            value={perPage}
+            onChange={handlePerPageChange}
+            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value={5}>5 rows</option>
+            <option value={10}>10 rows</option>
+            <option value={20}>15 rows</option>
+          </select>
+        </div>
         
-        <h2></h2>
-
-
         <button
-          className='mt-50 block w-72 px-4 py-2 mt-4 text-white bg-bluee-200 rounded-md hover:bg-blue-950'
+          className='block w-72 px-4 py-2 mt-6 text-white bg-bluee-200 rounded-md hover:bg-blue-950'
           onClick={handleNextPage}
         >
           SIGUIENTE
         </button>
+
       </div>
     </div>
   );

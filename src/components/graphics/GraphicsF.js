@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
 import Papa from 'papaparse';
 import graphics from "../../assets/xlsx/rptMovili.csv";
 
@@ -17,52 +16,72 @@ const GraphicsF = () => {
       const { data } = Papa.parse(csv, { header: true });
 
       setData(data.slice(1)); // Excluir la primera fila que contiene los encabezados
-      console.log(data)
+      console.log(data);
     };
 
     fetchData();
   }, []);
 
-  const createChartOptions = () => {
-
-    
-    const chartOptions = {
+  useEffect(() => {
+    // Configuración de la gráfica
+    const options = {
       chart: {
-        type: 'column',
+        type: "column",
       },
       title: {
-        text: 'Gráfico de Barras',
+        text: "BINGO",
       },
       xAxis: {
-        categories: data.map((row) => row['REGION']),
+        categories: ["R1", "R2", "R3", "R4", "R5", "R6"],
       },
       yAxis: {
+        min: 0,
+        max: 1250,
+        tickInterval: 250,
         title: {
-          text: 'Valores',
+          text: "",
         },
-        tickInterval: 250000, // Configura el intervalo de los ticks del eje Y a 250000
       },
       series: [
+        //Coloco los datos de manera estatica, lo comentado es otro metodo usando los datos del csv
         {
-          name: 'Nombre',
-          data: data.map((row) => parseFloat(row['META'])),
+          name: "LNOM",
+          data: [200, 350, 500, 750, 900, 1100],
+          //data: data.map((row) => parseFloat(row['REGION']))
+        },
+        {
+          name: "META",
+          data: [200, 350, 500, 750, 900, 1100],
+          //data: data.map((row) => parseFloat(row['META']))
+        },
+        {
+          name: "COMPROMISOS",
+          data: [150, 300, 450, 600, 850, 1000],
+          //data: data.map((row) => parseFloat(row['COMPROMISOS']))
+        },
+        {
+          name: "AVANCE",
+          data: [100, 250, 400, 550, 700, 950],
+          //data: data.map((row) => parseFloat(row['AVANCE']))
+        },
+        {
+          name: "SIAN",
+          data: [50, 200, 350, 500, 650, 800],
+          //data: data.map((row) => parseFloat(row['SIAN']))
+        },
+        {
+          name: "OTROS",
+          data: [75, 150, 225, 300, 375, 450],
+          //data: data.map((row) => parseFloat(row['OTROS']))
         },
       ],
     };
 
-    return chartOptions;
-  };
+    // Crear la gráfica
+    Highcharts.chart("barChartContainer", options);
+  }, [data]);
 
-  if (data.length === 0) {
-    return <div>Cargando datos...</div>;
-  }
-
-  return (
-    <div>
-      <h1>Gráfica</h1>
-      <HighchartsReact highcharts={Highcharts} options={createChartOptions()} />
-    </div>
-  );
+  return <div className='w-[80vw] sm:w-[45vw]' id="barChartContainer" />;
 };
 
 export default GraphicsF;

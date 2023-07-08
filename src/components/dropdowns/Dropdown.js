@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import GraphicsF from '../graphics/GraphicsF';
 import GraphicsL from '../graphics/GraphicsL';
+import BothGraphics from '../graphics/BothGraphics';
 
 const HeroSection = () => {
   const [selectedOption, setSelectedOption] = useState('estatal');
@@ -44,8 +45,8 @@ const HeroSection = () => {
       </form>
       {(showComponent || selectedOption === 'estatal') && (
         <div className="mt-4">
-          {selectedOption === 'estatal' && <ComponenteEstatal />}
-          {selectedOption === 'distritoLocal' && <GraphicsL />}
+          {selectedOption === 'estatal' && <BothGraphics />}
+          {selectedOption === 'distritoLocal' && <BothGraphics />}
           {selectedOption === 'distritoFederal' && <GraphicsF />}
         </div>
       )}

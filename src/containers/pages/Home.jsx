@@ -1,9 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import Dropdown from "../../components/home/Dropdown";
+import Dropdown from "../../components/dropdowns/Dropdown";
 
-import Navbar from "../../components/home/Navbar";
 import Layout from "../../Layout";
 import Table from '../../components/table/Table';
 
@@ -16,11 +15,9 @@ const Home = () => {
         {/*Metatags*/}
       </Helmet>
 
-      <div>
-        <Navbar />
-        <Dropdown />
-        <Table />
-      </div>
+      <Dropdown />
+      <Table />
+      
     </Layout>
   );
 };

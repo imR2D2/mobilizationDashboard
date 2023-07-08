@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import SearchUser from "../registration/SearchUser";
+import SearchUser from "./SearchUser";
 
 export default function MyModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -16,11 +16,11 @@ export default function MyModal() {
 
   return (
     <>
-      <div className="flex mt-20 w-2/6 m-auto">
+      <div className="flex mt-28 w-80 m-auto">
         <input
           type="text"
           placeholder="Ingresa el nombre"
-          className="flex-1 w-full px-4 py-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          className="w-60 sm:w-full flex-1 px-4 py-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
         />
         <button
           onClick={openModal}
