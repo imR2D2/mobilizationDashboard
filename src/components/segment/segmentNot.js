@@ -1,8 +1,9 @@
 import React from 'react';
 
-const AllInputs = ({ inputs }) => {
+const AllInputsTwo = ({ inputs }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-12 p-20">
+    <div className="grid grid-cols-1 sm:grid-cols-12 p-20 -mt-20">
+    <br/>
       {inputs.map((input, index) => (
         <div key={index} className={`${input.gridPosition} mt-4`}>
           <h2 className={`text-${input.titleColor} font-bold -ml-20`}>{input.title}</h2>
@@ -25,4 +26,4 @@ const AllInputs = ({ inputs }) => {
   );
 };
 
-export default AllInputs;
+export default AllInputsTwo;

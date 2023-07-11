@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Layout from "../../Layout"
 import MyModal from "../../components/registration/MyModal"
 import StructureInputs from '../../components/inputs/ShowInputs';
+import SegmentYes from '../../components/segment/segmentYes';
 
 const Contacto = () =>{
     return (
@@ -15,7 +16,7 @@ const Contacto = () =>{
 
             <MyModal />
             <StructureInputs />
-        
+            <SegmentYes />
         </Layout>
     )
 }
